@@ -22,6 +22,7 @@
     <property name="severity" value="error"/>
 
     <property name="fileExtensions" value="java, properties, xml"/>
+
     <!-- Excludes all 'module-info.java' files              -->
     <!-- See https://checkstyle.org/config_filefilters.html -->
     <module name="BeforeExecutionExclusionFileFilter">
@@ -61,7 +62,7 @@
             <property name="allowNonPrintableEscapes" value="true"/>
         </module>
         <module name="AvoidStarImport">
-            <property name="severity" value=""/>
+            <property name="severity" value="warning"/>
         </module>
         <module name="OneTopLevelClass"/>
         <module name="NoLineWrap">
@@ -318,6 +319,11 @@
             <property name="file" value="${org.checkstyle.google.suppressionxpathfilter.config}"
                       default="checkstyle-xpath-suppressions.xml" />
             <property name="optional" value="true"/>
+        </module>
+
+        <!-- Checks for unused import statements -->
+        <module name="UnusedImports">
+            <property name="severity" value="error" />
         </module>
     </module>
 </module>
